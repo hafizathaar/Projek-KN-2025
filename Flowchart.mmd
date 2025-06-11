@@ -1,0 +1,26 @@
+flowchart TD
+
+A["Mulai"] 
+  --> B["Definisi Fungsi Gerak Parabola (tanpa & dengan hambatan udara)"]
+  --> D["Definisi Fungsi Integral"]
+  --> E["Inisialisasi Interface dan Plot"]
+
+E --> F["Input: v0, sudut, m, A, Cd, rho, simtime"]
+F --> G["Klik tombol Jalankan Simulasi"]
+
+G --> H{"Validasi Nilai Input"}
+H -- "Tidak Valid" --> I["Tampilkan Pesan Error"]
+H -- "Valid" --> J["Hitung lintasan tanpa & dengan hambatan udara"]
+
+J --> K["Hitung Panjang Lintasan"]
+K --> L["Inisialisasi Animasi Lintasan"]
+
+L --> M["Animasi Lintasan Dimulai"]
+M --> N["Animasi Selesai"]
+
+N --> O["Tampilkan Informasi : Jarak, Waktu, Panjang Lintasan"]
+
+O --> P{"User klik 'Tutup Grafik & Ulangi' atau 'Keluar'?"}
+P -- "Tutup Grafik & Ulangi" --> Q["Tutup Grafik dan ulang ke input"]
+Q --> F
+P -- "Keluar" --> R["Tutup Grafik & Program Selesai"]
